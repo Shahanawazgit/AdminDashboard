@@ -1,0 +1,20 @@
+.mainDash {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+/* ********** Responsiveness ********** */
+@media screen and (max-width: 1200px) {
+  .mainDash {
+    margin-top: 2rem;
+    gap: 1rem;
+  }
+}
+
+/* ********** Mobile Responsiveness ********** */
+@media screen and (max-width: 600px) {
+  .mainDash {
+    align-items: center;
+  }
+}

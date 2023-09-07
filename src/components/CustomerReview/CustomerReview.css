@@ -1,0 +1,6 @@
+/* ********** Responsiveness ********** */
+@media screen and (max-width: 1200px) {
+  .customerReview {
+    margin-top: 10px;
+  }
+}
