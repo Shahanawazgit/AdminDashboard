@@ -46,6 +46,11 @@
   display: none;
 }
 
+a:-webkit-any-link {
+  color: #000 !important;
+  text-decoration: none !important;
+}
+
 /* ********** Responsiveness ********** */
 @media screen and (max-width: 1200px) {
   .AppGlass {

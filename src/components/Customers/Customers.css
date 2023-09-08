@@ -1,3 +1,9 @@
+.customers {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
 .MuiTableCell-root > * {
   padding: 10px;
 }
@@ -15,7 +21,7 @@ th {
   border-radius: 0.7rem !important;
 }
 
-.status {
+.stars {
   padding: 8px;
   border-radius: 9px;
 }
@@ -31,6 +37,11 @@ th {
 
 /* ********** Responsiveness ********** */
 @media screen and (max-width: 1200px) {
+  .customers {
+    margin-top: 2rem;
+    gap: 1rem;
+  }
+
   .table {
     width: 170%;
     margin-top: 1rem;
@@ -40,6 +51,10 @@ th {
 
 /* ********** Mobile Responsiveness ********** */
 @media screen and (max-width: 600px) {
+  .customers {
+    align-items: center;
+  }
+
   .table {
     position: relative;
     display: flex;

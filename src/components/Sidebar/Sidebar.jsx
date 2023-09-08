@@ -4,7 +4,7 @@ import logo from "../../imgs/logo.png";
 import { UilSignOutAlt, UilBars } from "@iconscout/react-unicons";
 import { SidebarData } from "../../Data/Data";
 import { motion } from "framer-motion";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const [selected, setSelected] = useState(0);
@@ -34,28 +34,37 @@ const Sidebar = () => {
         animate={window.innerWidth <= 600 ? `${expanded}` : ""}
       >
         {/* logo */}
-        <div className="logo">
-          <img src={logo} alt="logo" />
-          <span>
-            Sh<span>o</span>ps
-          </span>
-        </div>
+        <Link to="/">
+          <div className="logo" onClick={() => setExpanded(!expanded)}>
+            <img src={logo} alt="logo" />
+            <span>
+              Sh<span>o</span>ps
+            </span>
+          </div>
+        </Link>
 
         {/* menu */}
         <div className="menu">
-          {SidebarData.map((item, index) => {
+          {SidebarData.map((item, ind) => {
             return (
-              <div
-                className={selected === index ? "menuItem active" : "menuItem"}
-                key={index}
-                onClick={() => setSelected(index)}
-              >
-                <item.icon />
-                <span>{item.heading}</span>
+              <div key={ind}>
+                <Link to={`/${item.heading}`}>
+                  <div
+                    className={
+                      selected === ind ? "menuItem active" : "menuItem"
+                    }
+                    onClick={() => {
+                      setSelected(ind);
+                      setExpanded(!expanded);
+                    }}
+                  >
+                    <item.icon />
+                    <span>{item.heading}</span>
+                  </div>
+                </Link>
               </div>
             );
           })}
-
           <div className="menuItem">
             <UilSignOutAlt />
           </div>
